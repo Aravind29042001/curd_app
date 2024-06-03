@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Employees from "./Employees";
 import { v4 as uuid } from "uuid";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Add() {
   const [name, setName] = useState("");
@@ -20,7 +20,7 @@ function Add() {
 
     Employees.push({ id: uniqueId, Name: a, Age: b });
 
-    history("/");
+    history("/home");
   };
 
   let history = useNavigate();
@@ -43,9 +43,11 @@ function Add() {
             onChange={(e) => setAge(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <button type="submit" onClick={(e) => handleSubmit(e)}>
-          submit
-        </button>
+        <Link to={"/home"}>
+          <button type="submit" onClick={(e) => handleSubmit(e)}>
+            submit
+          </button>
+        </Link>
       </Form>
     </div>
   );

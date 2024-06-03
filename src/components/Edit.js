@@ -23,7 +23,7 @@ function Edit() {
     a.Name = name;
     a.Age = age;
 
-    history("/");
+    history("/home");
   };
 
   useEffect(()=>{
@@ -54,6 +54,7 @@ function Edit() {
             onChange={(e) => setAge(e.target.value)}
           ></Form.Control>
         </Form.Group>
+      
         <button type="submit" onClick={(e) => handleSubmit(e)}>
           update
         </button>

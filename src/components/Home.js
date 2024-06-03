@@ -18,7 +18,7 @@ function Home() {
       return e.id;
     }).indexOf(id);
     Employees.splice(index, 1);
-    history("/");
+    history("/home");
   };
 
   return (
